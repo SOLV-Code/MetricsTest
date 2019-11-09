@@ -192,6 +192,7 @@ conv.summary <- data.frame(Check=checks.vec,
 for(var.use in vars.check){
 
 acf.out <- calcACF(mcmc.par=mcmc.out$samples[,var.use],  crit.acf.buffer = 1.5,acf.plot=FALSE)
+print("FLAG")
 geweke.out <- calcGeweke(mcmc.par=mcmc.out$samples[,var.use])
 gelman.out <- gelman.diag(as.mcmc(mcmc.out$jags.out)[,var.use])$psrf[2] # extracts the Upper 95 CI
 
