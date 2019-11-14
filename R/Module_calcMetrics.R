@@ -1,5 +1,22 @@
-# MAIN FUNCTION THAT APPLIES ALL THE INDIVIDUAL METRIC FUNCTIONS 
-# AND PRODUCES A SUMMARY OUTPUT
+#' calcMetrics
+#'
+#' Main function that applies all the individual metric functions and produces a summary output
+#' @param series.in vector with numeric values  
+#' @param yrs.in vector of years corresponding to the values in series.in 
+#'    (missing yrs need to be included as NA values in series.in)
+#' @param gen.in  integer value with avg generation time
+#' @param stk.label  label to be used in output file (e.g. "EStu")
+#' @param species.label  label to be used in output file (e.g. "Sk")
+#' @param series.label  label to be used in output file   (e.g. "LogSm_TotSpn")
+#' @param slope.specs  list with arguments for the slope function NAME, see details there 
+#' @param avg.specs  list with arguments for the avg function NAME, see details there 
+#' @param metric.bm list with upper and lower benchmarks for each metric
+#' @param retro.start user-specified year. if NULL, do retrospective for last 9 yrs of the series
+#' @param tracing if TRUE, print lots of diagnostic/tracking info to the command lines
+#' @keywords metrics, benchmarks, slope, trend
+#' @export
+#' @examples
+
 
 
 calcMetrics <- function(  series.in, yrs.in, gen.in,
