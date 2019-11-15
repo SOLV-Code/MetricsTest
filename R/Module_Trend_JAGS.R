@@ -2,9 +2,6 @@
 
 
 
-
-
-
 trend.bugs.1 <- function(){
   for(i in 1:N){
     Abd[i] ~ dnorm(Pred_Abd[i], tau_abd)  
