@@ -2,7 +2,6 @@
 #'
 #' this function just does a basic long-term trend calculation on a single vector.
 #' calcLongTermTrend() applies the same basic calc retrospectively to a data frame of Year x Stock,
-#' with various user options (e.g. log transform, gen avg smoothing, time window to use)
 #' @param vec.in  a vector of values. NA are possible, but will result in NA trend for any recent time window that includes one or more NA
 #' @param gen.in  use the last gen.in values for the "recent" avg
 #' @param avg.type  "mean","geomean", or "median"

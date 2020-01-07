@@ -3,8 +3,10 @@ library(MetricsTest)
 library(R2jags)
 
 
-ls(getNamespace("MetricsTest"), all.names=TRUE)
+#ls(getNamespace("MetricsTest"), all.names=TRUE)
 
+
+# TEST BAYESIAN PERC CHANGE
 
 pdf("ProbDecl_Fits.pdf",onefile=TRUE,height=8.5, width=11)
 
@@ -14,12 +16,20 @@ slope.mcmc.fit <- calcPercChangeMCMC(vec.in= vec.use,model.in = NULL ,
                                      out.type = "long", mcmc.plots = TRUE)
 dev.off()
 
+names(slope.mcmc.fit)
+slope.mcmc.fit$pchange
+slope.mcmc.fit$probdecl
+slope.mcmc.fit$summary
 
 
+# TEST LONG-TERM TREND
 
+lt.trend.single <- calcLongTermTrendSimple(vec.in = as.vector(Nile) ,
+            gen.in = 4,min.lt.yrs = 20, avg.type = "geomean",
+            tracing=FALSE,
+            recent.excl = FALSE)
 
-
-
+lt.trend.single
 
 
 
