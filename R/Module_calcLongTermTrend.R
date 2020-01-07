@@ -1,23 +1,24 @@
-# This function is part of the emerging "WSPMetrics" Package
-# for the latest version and additional information, check
-# https://github.com/SOLV-Code/WSP-Metrics-Code
-# NEED ALSO STEPS FOR SINGLE VECTOR!!!!
-# Or just feed in a 1 col matrix?
+#' calcLongTermTrend
+#'
+#' this function applies a basic long-term trend to a data frame of Year x Stock,
+#' with various user options (e.g. log transform, gen avg smoothing, time window to use).
+#' For a singl vector, use calcLongTermTrendSimple()
+#' @param X a data frame with Years x Stocks. Row labels are years, no missing years allowed, NA are possible, but will result in NA Trend for
+# any recent time window that includes one or more NA (for now: discuss infill options for future extensions, as in Ck implementation)
+#' @param extra.yrs to handle COSEWIC "extra year"
+#' @param avg.type "mean","geomean", or "median"
+#' @param recent.excl if TRUE, then don't use the values from the recent gen as part of the LT avg
+#' @keywords trend
+#' @export
 
-calcLongTermTrend  <- function(X,gen.in = 4, recent.num.gen = 1, extra.yrs = 0, 
+calcLongTermTrend  <- function(X,gen.in = 4, recent.num.gen = 1, extra.yrs = 0,
 							min.lt.yrs = 20, avg.type = "geomean", tracing=FALSE,
 							recent.excl = FALSE){
-# X is a data frame with Years x Stocks. Row labels are years, no missing years allowed, NA are possible, but will result in NA Trend for
-# any recent time window that includes one or more NA (for now: discuss infill options for future extensions, as in Ck implementation)
-# extra.yrs arg is to handle COSEWIC "extra year"
-# avg.type = "mean","geomean", or "median"
-# recent.excl = if TRUE, then don't use the values from the recent gen as part of the LT avg
-# How to handle sets where each col has different gen?
-# group by gen, split, apply, then remerge?
-# NOTE: there is another version of this for a simple vector of values calcLongTermTrendSimple
+
+
 
 series.use <- X  # to keep var names consistent with calcPercChange
-	
+
 if(tracing){ print("series.use ------"); print(tail(series.use))}
 
 # create output template
@@ -62,14 +63,14 @@ if(tolower(avg.type) == "geomean"){
 	recent.avg <- expm1(colMeans(log1p(recent.mat), na.rm=FALSE))
 	longterm.avg <- expm1(colMeans(log1p(longterm.mat), na.rm=TRUE))
 	}
-	
+
 if(tolower(avg.type) == "median"){
 	recent.avg <- apply(recent.mat,MARGIN=2,FUN=median, na.rm=FALSE)  # if any NA in a column, get NA
 	longterm.avg <- apply(longterm.mat,MARGIN=2,FUN=median, na.rm=TRUE)   # ignore NA
 	}
-	
+
 if(tracing){ print(recent.avg); print(longterm.avg) }
-	
+
 out.mat[as.character(yr.use),] <- round(recent.avg/longterm.avg *100)
 
 } # end looping through years
