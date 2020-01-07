@@ -1,21 +1,30 @@
-# This function is part of the emerging "WSPMetrics" Package
-# for the latest version and additional information, check
-# https://github.com/SOLV-Code/WSP-Metrics-Code
-
+#' calcPercChangeSimple
+#'
+#' this function just does a basic percent change calculation on a single vector.
+#' calcPercChange() applies the same basic calc retrospectively to a data frame of Year x Stock,
+#' Note: for now this simply replicates internal function per.change.mod.fast.
+#' @param vec.in  a vector of values. NA are possible, but will result in NA trend for any recent
 
 calcPercChangeSimple  <- function(vec.in){
-# this function just does a basic perc change calc
-# calcPercChange() applies the same basic calc retrospectively to a data frame of Year x Stock, 
-# with various user options (e.g. log transform, gen avg smoothing, time window to use)
 
-# vec.in is a vector of values
+  na.rm <- TRUE
+  if(na.rm){vec.use <- na.omit(vec.in)} # NEED TO DISCUSS THIS
+  if(!na.rm){vec.use <- vec.in}
 
 
-perc.change <- per.change.mod.fast(vec.in,na.rm=FALSE)  
-# if any NA, gives NA for perc change
-# see issue https://github.com/carrieholt/WSP-Metrics-Code/issues/55
+  if(sum(is.na(vec.use)) == 0 ){
+    n<-length(vec.use)
+    yrs <- 1:n
+    lm.coeff <- .lm.fit(cbind(1,yrs),vec.use)$coefficients # uses model matrix that is usually created inside lm()
+    #print(lm.coeff)
+    pchange <- (exp(lm.coeff[1]+lm.coeff[2]*n) -  exp(lm.coeff[1]+lm.coeff[2])) / exp(lm.coeff[1]+lm.coeff[2]) *100
+    #print(pchange)
+  }
 
-out.list <- list(pchange = perc.change)
+  if(sum(is.na(vec.in)) >0 ){	pchange <- NA }
+
+
+out.list <- list(pchange = pchange )
 
 
 return(out.list)
