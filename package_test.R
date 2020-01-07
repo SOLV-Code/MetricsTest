@@ -22,7 +22,7 @@ slope.mcmc.fit$probdecl
 slope.mcmc.fit$summary
 
 
-# TEST LONG-TERM TREND
+# TEST LONG-TERM TREND - Simple version for single vector
 
 lt.trend.single <- calcLongTermTrendSimple(vec.in = as.vector(Nile) ,
             gen.in = 4,min.lt.yrs = 20, avg.type = "geomean",
@@ -30,6 +30,18 @@ lt.trend.single <- calcLongTermTrendSimple(vec.in = as.vector(Nile) ,
             recent.excl = FALSE)
 
 lt.trend.single
+
+# TEST LONG-TERM TREND - data frame version
+
+
+sample.df <- data.frame(Stock1 = sample(100,40),Stock2 = sample(2000,40),Stock3 = sample(500,40))
+sample.df[29,3] <- NA
+
+lt.trend <- calcLongTermTrend(X = sample.df,gen.in = 4, recent.num.gen = 1, extra.yrs = 0,
+                               min.lt.yrs = 20, avg.type = "geomean", tracing=FALSE,
+                               recent.excl = FALSE)
+
+lt.trend
 
 
 
