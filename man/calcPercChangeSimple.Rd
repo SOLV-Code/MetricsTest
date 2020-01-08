@@ -7,7 +7,7 @@
 calcPercChangeSimple(vec.in)
 }
 \arguments{
-\item{vec.in}{a vector of values. NA are possible, but will result in NA trend for any recent}
+\item{vec.in}{a vector of values. NA are possible, but will result in NA trend (no infill for now)}
 }
 \description{
 this function just does a basic percent change calculation on a single vector.

@@ -51,7 +51,7 @@ per.change.mod.fast<-function(vec.in,na.rm=TRUE){
 	n<-length(vec.in)
 	yrs <- 1:n
 	lm.coeff <- .lm.fit(cbind(1,yrs),vec.in)$coefficients # uses model matrix that is usually created inside lm()
-	print(lm.coeff)
+	#print(lm.coeff)
 	pchange <- (exp(lm.coeff[1]+lm.coeff[2]*n) -  exp(lm.coeff[1]+lm.coeff[2])) / exp(lm.coeff[1]+lm.coeff[2]) *100
 	#print(pchange)	
 	}

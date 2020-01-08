@@ -3,5 +3,6 @@
 export(calcLongTermTrend)
 export(calcLongTermTrendSimple)
 export(calcMetrics)
+export(calcPercChange)
 export(calcPercChangeMCMC)
 export(calcPercChangeSimple)

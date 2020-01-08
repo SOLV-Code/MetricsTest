@@ -20,6 +20,6 @@ calcLongTermTrend(X, gen.in = 4, recent.num.gen = 1, extra.yrs = 0,
 \description{
 this function applies a basic long-term trend to a data frame of Year x Stock,
 with various user options (e.g. log transform, gen avg smoothing, time window to use).
-For a singl vector, use calcLongTermTrendSimple()
+For a single vector, use calcLongTermTrendSimple()
 }
 \keyword{trend}
