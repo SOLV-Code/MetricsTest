@@ -2,7 +2,7 @@
 #'
 #' this function applies a basic long-term trend to a data frame of Year x Stock,
 #' with various user options (e.g. log transform, gen avg smoothing, time window to use).
-#' For a singl vector, use calcLongTermTrendSimple()
+#' For a single vector, use calcLongTermTrendSimple()
 #' @param X a data frame with Years x Stocks. Row labels are years, no missing years allowed, NA are possible, but will result in NA Trend for
 # any recent time window that includes one or more NA (for now: discuss infill options for future extensions, as in Ck implementation)
 #' @param extra.yrs to handle COSEWIC "extra year"
