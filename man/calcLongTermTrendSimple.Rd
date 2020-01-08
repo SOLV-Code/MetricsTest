@@ -21,7 +21,6 @@ calcLongTermTrendSimple(vec.in, gen.in = 4, min.lt.yrs = 20,
 \description{
 this function just does a basic long-term trend calculation on a single vector.
 calcLongTermTrend() applies the same basic calc retrospectively to a data frame of Year x Stock,
-with various user options (e.g. log transform, gen avg smoothing, time window to use)
 }
 \examples{
 calcLongTermTrendSimple(vec.in = as.vector(Nile) ,

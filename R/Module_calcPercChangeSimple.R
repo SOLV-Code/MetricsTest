@@ -2,8 +2,11 @@
 #'
 #' this function just does a basic percent change calculation on a single vector.
 #' calcPercChange() applies the same basic calc retrospectively to a data frame of Year x Stock,
-#' Note: for now this simply replicates internal function per.change.mod.fast.
-#' @param vec.in  a vector of values. NA are possible, but will result in NA trend for any recent
+#' Note: for now this simply replicates the internal function per.change.mod.fast
+#' @param vec.in  a vector of values. NA are possible, but will result in NA trend (no infill for now)
+#' @export
+#' @examples
+#' calcPercChangeSimple(vec.in = as.vector(Nile))
 
 calcPercChangeSimple  <- function(vec.in){
 
