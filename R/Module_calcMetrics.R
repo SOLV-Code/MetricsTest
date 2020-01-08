@@ -15,7 +15,7 @@
 #' @param tracing if TRUE, print lots of diagnostic/tracking info to the command lines
 #' @keywords metrics, benchmarks, slope, trend
 #' @export
-#' @examples
+
 
 
 
