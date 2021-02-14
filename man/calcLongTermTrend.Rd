@@ -4,9 +4,16 @@
 \alias{calcLongTermTrend}
 \title{calcLongTermTrend}
 \usage{
-calcLongTermTrend(X, gen.in = 4, recent.num.gen = 1, extra.yrs = 0,
-  min.lt.yrs = 20, avg.type = "geomean", tracing = FALSE,
-  recent.excl = FALSE)
+calcLongTermTrend(
+  X,
+  gen.in = 4,
+  recent.num.gen = 1,
+  extra.yrs = 0,
+  min.lt.yrs = 20,
+  avg.type = "geomean",
+  tracing = FALSE,
+  recent.excl = FALSE
+)
 }
 \arguments{
 \item{X}{a data frame with Years x Stocks. Row labels are years, no missing years allowed, NA are possible, but will result in NA Trend for}

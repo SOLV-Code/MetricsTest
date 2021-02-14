@@ -4,9 +4,16 @@
 \alias{calcPercChange}
 \title{calcPercChange}
 \usage{
-calcPercChange(X, gen.in = 4, slope.num.gen = 3, extra.yrs = 0,
-  genmean.smoothing = TRUE, log.transform = TRUE, out.exp = FALSE,
-  tracing = FALSE)
+calcPercChange(
+  X,
+  gen.in = 4,
+  slope.num.gen = 3,
+  extra.yrs = 0,
+  genmean.smoothing = TRUE,
+  log.transform = TRUE,
+  out.exp = FALSE,
+  tracing = FALSE
+)
 }
 \arguments{
 \item{X}{a data frame with Years x Stocks. Row labels are years, no missing years allowed, NA are possible, but will result in NA for}
