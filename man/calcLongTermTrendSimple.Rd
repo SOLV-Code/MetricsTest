@@ -4,8 +4,14 @@
 \alias{calcLongTermTrendSimple}
 \title{calcLongTermTrendSimple}
 \usage{
-calcLongTermTrendSimple(vec.in, gen.in = 4, min.lt.yrs = 20,
-  avg.type = "geomean", tracing = FALSE, recent.excl = FALSE)
+calcLongTermTrendSimple(
+  vec.in,
+  gen.in = 4,
+  min.lt.yrs = 20,
+  avg.type = "geomean",
+  tracing = FALSE,
+  recent.excl = FALSE
+)
 }
 \arguments{
 \item{vec.in}{a vector of values. NA are possible, but will result in NA trend for any recent time window that includes one or more NA}

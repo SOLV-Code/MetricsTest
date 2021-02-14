@@ -4,9 +4,15 @@
 \alias{calcPercChangeMCMC}
 \title{calcPercChangeMCMC}
 \usage{
-calcPercChangeMCMC(vec.in, model.in = NULL, perc.change.bm = -25,
-  na.skip = FALSE, out.type = "short", mcmc.plots = FALSE,
-  convergence.check = FALSE)
+calcPercChangeMCMC(
+  vec.in,
+  model.in = NULL,
+  perc.change.bm = -25,
+  na.skip = FALSE,
+  out.type = "short",
+  mcmc.plots = FALSE,
+  convergence.check = FALSE
+)
 }
 \arguments{
 \item{vec.in}{vector with numeric values}

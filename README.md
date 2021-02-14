@@ -1,7 +1,11 @@
-## Code to Calculate Status Metrics under *Canada's Wild Salmon Policy* (WSP)
+## OBSOLETE: Code to Calculate Status Metrics under *Canada's Wild Salmon Policy* (WSP)
 
 
 ### Disclaimer
+
+
+**This Package is now obsolete: Everything has moved on to [WSPMetrics](https://github.com/Pacific-salmon-assess/WSP-Metrics-Pkg) **
+
 
 *This package is under development. Functions will change rapidly and substantially.
 Do not use these if you are not part of the development team!*

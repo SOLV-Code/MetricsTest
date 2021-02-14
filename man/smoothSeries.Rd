@@ -4,8 +4,14 @@
 \alias{smoothSeries}
 \title{smoothSeries}
 \usage{
-smoothSeries(vec.in, gen, filter.sides = 2, log.transform = TRUE,
-  out.exp = TRUE, na.rm = FALSE)
+smoothSeries(
+  vec.in,
+  gen,
+  filter.sides = 2,
+  log.transform = TRUE,
+  out.exp = TRUE,
+  na.rm = FALSE
+)
 }
 \arguments{
 \item{vec.in}{vector with numeric values}

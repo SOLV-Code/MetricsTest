@@ -4,14 +4,21 @@
 \alias{calcMetrics}
 \title{calcMetrics}
 \usage{
-calcMetrics(series.in, yrs.in, gen.in, stk.label = "Stock",
-  species.label = "Species", series.label = "DataVersion",
-  slope.specs = list(num.gen = 3, extra.yrs = 0, filter.sides = 1,
-  log.transform = TRUE, out.exp = TRUE, na.rm = FALSE),
-  avg.specs = list(avg.type = "geomean", recent.excl = FALSE, min.lt.yrs
-  = 20), metric.bm = list(RelAbd = c(NA, NA), AbsAbd = c(1000, 10000),
-  LongTrend = c(0.5, 0.75), PercChange = c(-25, -15), ProbDeclBelowLBM =
-  c(NA, NA)), retro.start = NULL, tracing = TRUE)
+calcMetrics(
+  series.in,
+  yrs.in,
+  gen.in,
+  stk.label = "Stock",
+  species.label = "Species",
+  series.label = "DataVersion",
+  slope.specs = list(num.gen = 3, extra.yrs = 0, filter.sides = 1, log.transform = TRUE,
+    out.exp = TRUE, na.rm = FALSE),
+  avg.specs = list(avg.type = "geomean", recent.excl = FALSE, min.lt.yrs = 20),
+  metric.bm = list(RelAbd = c(NA, NA), AbsAbd = c(1000, 10000), LongTrend = c(0.5,
+    0.75), PercChange = c(-25, -15), ProbDeclBelowLBM = c(NA, NA)),
+  retro.start = NULL,
+  tracing = TRUE
+)
 }
 \arguments{
 \item{series.in}{vector with numeric values}
